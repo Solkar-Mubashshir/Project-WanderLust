@@ -57,7 +57,7 @@ store.on("error", (err) => {
 //Express session
 const sessionOption = {
   store,
-  secret: process.env.SECRETgit ,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -78,6 +78,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 // use static authenticate method of model in LocalStrategy
 passport.use(new LocalStrategy(User.authenticate()));
+
+
 
 // use static serialize and deserialize of model for passport session support
 passport.serializeUser(User.serializeUser());
