@@ -1,3 +1,7 @@
+const mongoose = require("mongoose");
+
+const ZoroId = new mongoose.Types.ObjectId("69839adea2a51232b352f0be");
+
 const sampleListings = [
   {
     title: "Cozy Beachfront Cottage",
@@ -6,7 +10,8 @@ const sampleListings = [
     price: 1500,
     location: "Malibu, California",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-118.7798, 34.0259] }
+    geometry: { type: "Point", coordinates: [-118.7798, 34.0259] },
+    owner: ZoroId,
   },
   {
     title: "Modern Loft in Downtown",
@@ -15,7 +20,8 @@ const sampleListings = [
     price: 1200,
     location: "New York City, New York",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-74.0060, 40.7128] }
+    geometry: { type: "Point", coordinates: [-74.0060, 40.7128] },
+    owner: ZoroId,
   },
   {
     title: "Mountain Retreat",
@@ -24,7 +30,8 @@ const sampleListings = [
     price: 1000,
     location: "Aspen, Colorado",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-106.8175, 39.1911] }
+    geometry: { type: "Point", coordinates: [-106.8175, 39.1911] },
+    owner: ZoroId,
   },
   {
     title: "Historic Villa in Tuscany",
@@ -33,7 +40,8 @@ const sampleListings = [
     price: 2500,
     location: "Florence, Tuscany",
     country: "Italy",
-    geometry: { type: "Point", coordinates: [11.2558, 43.7696] }
+    geometry: { type: "Point", coordinates: [11.2558, 43.7696] },
+    owner: ZoroId,
   },
   {
     title: "Secluded Treehouse Getaway",
@@ -42,7 +50,8 @@ const sampleListings = [
     price: 800,
     location: "Portland, Oregon",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-122.6765, 45.5231] }
+    geometry: { type: "Point", coordinates: [-122.6765, 45.5231] },
+    owner: ZoroId,
   },
   {
     title: "Beachfront Paradise",
@@ -51,7 +60,8 @@ const sampleListings = [
     price: 2000,
     location: "Cancún, Quintana Roo",
     country: "Mexico",
-    geometry: { type: "Point", coordinates: [-86.8475, 21.1619] }
+    geometry: { type: "Point", coordinates: [-86.8475, 21.1619] },
+    owner: ZoroId,
   },
   {
     title: "Rustic Cabin by the Lake",
@@ -60,7 +70,8 @@ const sampleListings = [
     price: 900,
     location: "Lake Tahoe, California",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-120.0324, 39.0968] }
+    geometry: { type: "Point", coordinates: [-120.0324, 39.0968] },
+    owner: ZoroId,
   },
   {
     title: "Luxury Penthouse with City Views",
@@ -69,7 +80,8 @@ const sampleListings = [
     price: 3500,
     location: "Los Angeles, California",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-118.2437, 34.0522] }
+    geometry: { type: "Point", coordinates: [-118.2437, 34.0522] },
+    owner: ZoroId,
   },
   {
     title: "Ski-In/Ski-Out Chalet",
@@ -78,7 +90,8 @@ const sampleListings = [
     price: 3000,
     location: "Verbier, Valais",
     country: "Switzerland",
-    geometry: { type: "Point", coordinates: [7.2267, 46.0966] }
+    geometry: { type: "Point", coordinates: [7.2267, 46.0966] },
+    owner: ZoroId,
   },
   {
     title: "Safari Lodge in the Serengeti",
@@ -87,7 +100,8 @@ const sampleListings = [
     price: 4000,
     location: "Serengeti National Park",
     country: "Tanzania",
-    geometry: { type: "Point", coordinates: [34.8233, -2.3333] }
+    geometry: { type: "Point", coordinates: [34.8233, -2.3333] },
+    owner: ZoroId,
   },
   {
     title: "Historic Canal House",
@@ -96,7 +110,8 @@ const sampleListings = [
     price: 1800,
     location: "Amsterdam",
     country: "Netherlands",
-    geometry: { type: "Point", coordinates: [4.9041, 52.3676] }
+    geometry: { type: "Point", coordinates: [4.9041, 52.3676] },
+    owner: ZoroId,
   },
   {
     title: "Private Island Retreat",
@@ -105,7 +120,8 @@ const sampleListings = [
     price: 10000,
     location: "Mamanuca Islands",
     country: "Fiji",
-    geometry: { type: "Point", coordinates: [177.1667, -17.7500] }
+    geometry: { type: "Point", coordinates: [177.1667, -17.7500] },
+    owner: ZoroId,
   },
   {
     title: "Luxury Villa in Maldives",
@@ -114,7 +130,9 @@ const sampleListings = [
     price: 6000,
     location: "Malé",
     country: "Maldives",
-    geometry: { type: "Point", coordinates: [73.5093, 4.1755] }
+    geometry: { type: "Point", coordinates: [73.5093, 4.1755] },
+    owner: ZoroId,
+    
   },
   {
     title: "Ski Chalet in Aspen",
@@ -123,7 +141,8 @@ const sampleListings = [
     price: 4000,
     location: "Aspen, Colorado",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-106.8175, 39.1911] }
+    geometry: { type: "Point", coordinates: [-106.8175, 39.1911] },
+    owner: ZoroId,
   },
   {
     title: "Secluded Beach House in Costa Rica",
@@ -132,7 +151,8 @@ const sampleListings = [
     price: 1800,
     location: "Guanacaste",
     country: "Costa Rica",
-    geometry: { type: "Point", coordinates: [-85.6699, 10.6343] }
+    geometry: { type: "Point", coordinates: [-85.6699, 10.6343] },
+    owner: ZoroId,
   },
   {
     title: "Charming Cottage in the Cotswolds",
@@ -141,7 +161,8 @@ const sampleListings = [
     price: 1200,
     location: "Cotswolds, England",
     country: "United Kingdom",
-    geometry: { type: "Point", coordinates: [-1.6847, 51.8450] }
+    geometry: { type: "Point", coordinates: [-1.6847, 51.8450] },
+    owner: ZoroId,
   },
   {
     title: "Historic Brownstone in Boston",
@@ -150,7 +171,8 @@ const sampleListings = [
     price: 2200,
     location: "Boston, Massachusetts",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-71.0589, 42.3601] }
+    geometry: { type: "Point", coordinates: [-71.0589, 42.3601] },
+    owner: ZoroId,
   },
   {
     title: "Beachfront Bungalow in Bali",
@@ -159,7 +181,8 @@ const sampleListings = [
     price: 1800,
     location: "Seminyak, Bali",
     country: "Indonesia",
-    geometry: { type: "Point", coordinates: [115.1628, -8.6900] }
+    geometry: { type: "Point", coordinates: [115.1628, -8.6900] },
+    owner: ZoroId,
   },
   {
     title: "Mountain View Cabin in Banff",
@@ -168,7 +191,8 @@ const sampleListings = [
     price: 1500,
     location: "Banff, Alberta",
     country: "Canada",
-    geometry: { type: "Point", coordinates: [-115.5708, 51.1784] }
+    geometry: { type: "Point", coordinates: [-115.5708, 51.1784] },
+    owner: ZoroId,
   },
   {
     title: "Art Deco Apartment in Miami",
@@ -177,7 +201,9 @@ const sampleListings = [
     price: 1600,
     location: "Miami, Florida",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-80.1918, 25.7617] }
+    geometry: { type: "Point", coordinates: [-80.1918, 25.7617] },
+    owner: ZoroId,
+
   },
   {
     title: "Tropical Villa in Phuket",
@@ -186,7 +212,8 @@ const sampleListings = [
     price: 3000,
     location: "Phuket, Thailand",
     country: "Thailand",
-    geometry: { type: "Point", coordinates: [98.3903, 7.8804] }
+    geometry: { type: "Point", coordinates: [98.3903, 7.8804] },
+    owner: ZoroId,
   },
   {
     title: "Historic Castle in Scotland",
@@ -195,7 +222,8 @@ const sampleListings = [
     price: 4000,
     location: "Inverness, Scotland",
     country: "United Kingdom",
-    geometry: { type: "Point", coordinates: [-3.2028, 57.4778] }
+    geometry: { type: "Point", coordinates: [-3.2028, 57.4778] },
+    owner: ZoroId,
   },
   {
     title: "Desert Oasis in Dubai",
@@ -204,7 +232,8 @@ const sampleListings = [
     price: 5000,
     location: "Dubai, United Arab Emirates",
     country: "United Arab Emirates",
-    geometry: { type: "Point", coordinates: [55.2708, 25.2048] }
+    geometry: { type: "Point", coordinates: [55.2708, 25.2048] },
+    owner: ZoroId,
   },
   {
     title: "Rustic Log Cabin in Montana",
@@ -213,7 +242,8 @@ const sampleListings = [
     price: 1100,
     location: "Missoula, Montana",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-114.0207, 46.8787] }
+    geometry: { type: "Point", coordinates: [-114.0207, 46.8787] },
+    owner: ZoroId,
   },
   {
     title: "Beachfront Villa in Greece",
@@ -222,7 +252,8 @@ const sampleListings = [
     price: 2500,
     location: "Mykonos, Greece",
     country: "Greece",
-    geometry: { type: "Point", coordinates: [25.3294, 37.4467] }
+    geometry: { type: "Point", coordinates: [25.3294, 37.4467] },
+    owner: ZoroId,
   },
   {
     title: "Eco-Friendly Treehouse Retreat",
@@ -231,7 +262,8 @@ const sampleListings = [
     price: 750,
     location: "Monteverde, Costa Rica",
     country: "Costa Rica",
-    geometry: { type: "Point", coordinates: [-85.3300, 10.3000] }
+    geometry: { type: "Point", coordinates: [-85.3300, 10.3000] },
+    owner: ZoroId,
   },
   {
     title: "Historic Cottage in Charleston",
@@ -240,7 +272,8 @@ const sampleListings = [
     price: 1600,
     location: "Charleston, South Carolina",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-79.9311, 32.7765] }
+    geometry: { type: "Point", coordinates: [-79.9311, 32.7765] },
+    owner: ZoroId,
   },
   {
     title: "Modern Apartment in Tokyo",
@@ -249,7 +282,8 @@ const sampleListings = [
     price: 2000,
     location: "Shinjuku, Tokyo",
     country: "Japan",
-    geometry: { type: "Point", coordinates: [139.6917, 35.6895] }
+    geometry: { type: "Point", coordinates: [139.6917, 35.6895] },
+    owner: ZoroId,
   },
   {
     title: "Lakefront Cabin in New Hampshire",
@@ -258,7 +292,8 @@ const sampleListings = [
     price: 1200,
     location: "Lake Winnipesaukee, New Hampshire",
     country: "United States",
-    geometry: { type: "Point", coordinates: [-71.4474, 43.5215] }
+    geometry: { type: "Point", coordinates: [-71.4474, 43.5215] },
+    owner: ZoroId,
   },
   {
     title: "Overwater Bungalow in Bora Bora",
@@ -267,7 +302,8 @@ const sampleListings = [
     price: 7000,
     location: "Bora Bora, French Polynesia",
     country: "French Polynesia",
-    geometry: { type: "Point", coordinates: [-151.7415, -16.5004] }
+    geometry: { type: "Point", coordinates: [-151.7415, -16.5004] },
+    owner: ZoroId,
   }
 ];
 

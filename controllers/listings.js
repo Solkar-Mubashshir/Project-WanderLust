@@ -9,18 +9,32 @@ module.exports.renderNewForm = (req, res) => {
   res.render("listings/new.ejs");
 };
 
+
 module.exports.showListing = async (req, res) => {
-  let { id } = req.params;
+  const { id } = req.params;
+
   const listing = await Listing.findById(id)
-    .populate({ path: "reviews", populate: { path: "author" } })
+    .populate({
+      path: "reviews",
+      populate: { path: "author" },
+    })
     .populate("owner");
+
   if (!listing) {
-    req.flash("error", "Listing you requested for does not exist!");
+    req.flash("error", "Listing not found");
     return res.redirect("/listings");
   }
-  console.log(listing);
-  res.render("listings/show.ejs", { listing });
+
+  const isOwner =
+    req.user &&
+    listing.owner &&
+    listing.owner._id.equals(req.user._id);
+
+  res.render("listings/show", { listing, isOwner });
 };
+
+
+
 
 module.exports.createlisting = async (req, res, next) => {
 

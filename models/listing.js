@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./review.js");
-const review = require("./review.js");
 
 const listingSchema = new Schema({
   title: {
@@ -13,14 +12,6 @@ const listingSchema = new Schema({
   description: {
     type: String,
   },
-
-  //   image: {
-  //     filename: String,
-  //     url: String,
-  //     default : "https://unsplash.com/photos/green-trees-on-mountain-under-white-clouds-during-daytime-FB8lSUHaKaI",
-  //     set : (v) => v === ""
-  //     ? "https://unsplash.com/photos/green-trees-on-mountain-under-white-clouds-during-daytime-FB8lSUHaKaI" : v
-  //   },
 
   image: {
     //   filename: {
@@ -56,6 +47,7 @@ const listingSchema = new Schema({
   reviews: [
     {
       type: Schema.Types.ObjectId,
+
       ref: "Review",
     },
   ],

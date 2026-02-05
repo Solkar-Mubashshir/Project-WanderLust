@@ -46,7 +46,7 @@ const initDB = async () => {
   
   const listingsWithOwner = initData.data.map((obj) => ({
     ...obj,
-    owner: "69811c74b6dbd8659c3073f4", // make sure this user exists
+    owner: "69839adea2a51232b352f0be", // make sure this user exists
   }));
 
   await Listing.insertMany(listingsWithOwner); // ✅ FIXED
