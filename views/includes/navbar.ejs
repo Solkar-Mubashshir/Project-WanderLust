@@ -40,38 +40,27 @@
 
   @media (max-width:767px) {
 
-    .search-container {
-      display: none;
-    }
+
 
     #navbarNav.show {
       background: white;
       margin-top: 10px;
       padding: 10px 14px;
       border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
     }
 
     #navbarNav .nav-link {
       padding: 6px 4px;
     }
 
-    .my-text {
-      display: none;
+     .search-container {
+      max-width: 50rem;
     }
 
 
   }
 
-
-
-  @media (max-width:767px) {
-
-    .my-text {
-      display: none;
-    }
-
-  }
 
 
   @media (min-width:768px) and (max-width:1023px) {
@@ -124,7 +113,10 @@
     }
 
   }
+ 
 </style>
+
+
 
 
 <nav class="navbar navbar-expand-md border-bottom sticky-top bg-white">
@@ -143,16 +135,7 @@
     </div>
 
 
-    <!-- CENTER SEARCH -->
-    <form class="d-flex mx-auto search-container" action="/listings/search" method="GET">
-
-      <input class="form-control me-2 search-inp" type="search" name="q" placeholder="Search destination">
-
-      <button class="btn search-btn" type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i><span class="my-text">Search</span>
-      </button>
-
-    </form>
+    
 
 
     <!-- TOGGLE -->
@@ -162,6 +145,17 @@
 
 
     <div class="collapse navbar-collapse" id="navbarNav">
+
+      <!-- CENTER SEARCH -->
+    <form class="d-flex d-md-none my-2 search-container" action="/listings/search" method="GET">
+
+      <input class="form-control me-2 search-inp" type="search" name="q" placeholder="Search destination">
+
+      <button class="btn search-btn" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i><span class="my-text">Search</span>
+      </button>
+
+    </form>
 
       <!-- RIGHT SIDE -->
       <div class="navbar-nav ms-auto">
