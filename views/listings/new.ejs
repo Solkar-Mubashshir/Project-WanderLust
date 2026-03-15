@@ -35,10 +35,35 @@
         <div class="invalid-feedback">Please enter a description!</div>
       </div>
 
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+
+        <select name="listing[categories][]" class="form-control" required>
+          <option value="">Select Category</option>
+          <option value="Rooms">Rooms</option>
+          <option value="Iconic Cities">Iconic Cities</option>
+          <option value="Mountains">Mountains</option>
+          <option value="Castles">Castles</option>
+          <option value="Amazing Pools">Amazing Pools</option>
+          <option value="Camping">Camping</option>
+          <option value="Farms">Farms</option>
+          <option value="Arctic">Arctic</option>
+          <option value="Domes">Domes</option>
+          <option value="Boats">Boats</option>
+          <option value="Beach">Beach</option>
+        </select>
+
+        <div class="invalid-feedback">Please select a category!</div>
+      </div>
 
       <div class="mb-3">
         <label for="image" class="form-label">Upload Image</label>
-        <input type="file" name="listing[image]" class="form-control" required />
+        <input
+          type="file"
+          name="listing[image]"
+          class="form-control"
+          required
+        />
       </div>
 
       <div class="row">

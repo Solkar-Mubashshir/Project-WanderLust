@@ -5,6 +5,16 @@ module.exports.index = async (req, res) => {
   res.render("listings/index.ejs", { allListings });
 };
 
+module.exports.filterByCategory = async (req, res) => {
+  const { category } = req.params;
+
+  const allListings = await Listing.find({
+    categories: category,
+  });
+
+  res.render("listings/index.ejs", { allListings });
+};
+
 module.exports.renderNewForm = (req, res) => {
   res.render("listings/new.ejs");
 };
@@ -91,15 +101,6 @@ module.exports.createlisting = async (req, res, next) => {
     next(e);
   }
 
-
-//   let url = req.file.path;
-//   let filename = req.file.filename;
-//   const newListing = new Listing(req.body.listing);
-//   newListing.owner = req.user._id;
-//   newListing.image = { url, filename };
-//   await newListing.save();
-//   req.flash("success", "New listing Created!");
-//   res.redirect("/listings");
 };
 
 module.exports.renderEditForm = async (req, res) => {
@@ -142,4 +143,22 @@ module.exports.deleteListing = async (req, res) => {
   console.log(deletedListing);
   req.flash("success", "Listing Deleted!");
   res.redirect("/listings");
+};
+
+module.exports.searchListings = async (req, res) => {
+  let { q } = req.query;
+
+  if (!q) {
+    const allListings = await Listing.find({});
+    return res.render("listings/index.ejs", { allListings });
+  }
+
+  const allListings = await Listing.find({
+    $or: [
+      { location: { $regex: q, $options: "i" } },
+      { country: { $regex: q, $options: "i" } }
+    ]
+  });
+
+  res.render("listings/index.ejs", { allListings });
 };

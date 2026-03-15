@@ -14,20 +14,6 @@ const listingSchema = new Schema({
   },
 
   image: {
-    //   filename: {
-    //     type: String,
-    //     default: "listingimage",
-    //   },
-    //   url: {
-    //     type: String,
-    //     default:
-    //       "https://images.unsplash.com/photo-1658163724666-77bbb2821b8f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    //     set: (v) =>
-    //       v == null || v.trim() === ""
-    //         ? "https://images.unsplash.com/photo-1658163724666-77bbb2821b8f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    //         : v,
-    //   },
-
     url: String,
     filename: String,
   },
@@ -44,6 +30,25 @@ const listingSchema = new Schema({
     type: String,
   },
 
+  categories: [
+    {
+      type: String,
+      enum: [
+        "Rooms",
+        "Iconic Cities",
+        "Mountains",
+        "Castles",
+        "Amazing Pools",
+        "Camping",
+        "Farms",
+        "Arctic",
+        "Domes",
+        "Boats",
+        "Beach",
+      ],
+    },
+  ],
+
   reviews: [
     {
       type: Schema.Types.ObjectId,
@@ -57,21 +62,17 @@ const listingSchema = new Schema({
     ref: "User",
   },
 
-
   geometry: {
-  type: {
-    type: String,
-    enum: ["Point"],
-    required: true
+    type: {
+      type: String,
+      enum: ["Point"],
+      required: true,
+    },
+    coordinates: {
+      type: [Number],
+      required: true,
+    },
   },
-  coordinates: {
-    type: [Number],
-    required: true
-  }
-}
-
-
-
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {
